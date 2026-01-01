@@ -2,18 +2,21 @@ function rupiah(num) {
   return "Rp " + num.toLocaleString("id-ID");
 }
 
+function parseRupiah(value) {
+  return parseInt(value.replace(/[^0-9]/g, "")) || 0;
+}
+
+function rupiah(num) {
+  return "Rp " + Math.floor(num).toLocaleString("id-ID");
+}
+
 function hitung() {
-  const monthly = parseFloat(document.getElementById("monthly").value);
+  const monthly = parseRupiah(document.getElementById("monthly").value);
+  const needs = parseRupiah(document.getElementById("needs").value);
   const days = parseInt(document.getElementById("days").value);
-  const needs = parseFloat(document.getElementById("needs").value) || 0;
 
   if (!monthly || !days) {
-    alert("Isi uang bulanan dan jumlah hari dulu ya 🙏");
-    return;
-  }
-
-  if (days <= 0) {
-    alert("Jumlah hari tidak valid!");
+    alert("Isi uang bulanan dan jumlah hari dulu!");
     return;
   }
 
