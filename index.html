@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoneyMate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>MoneyMate</h1>
+      <p>Kelola uang bulananmu dengan cerdas</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <h2>Input Data</h2>
+        <input type="number" id="monthly" placeholder="Uang Bulanan (Rp)" />
+        <input type="number" id="days" placeholder="Jumlah Hari" />
+        <input
+          type="number"
+          id="needs"
+          placeholder="Total Kebutuhan (Opsional)"
+        />
+        <button onclick="hitung()">Hitung</button>
+      </div>
+
+      <div class="card result">
+        <h2>Hasil</h2>
+        <p>Uang per Hari: <span id="daily">-</span></p>
+        <p>Uang per Minggu: <span id="weekly">-</span></p>
+        <p>Total Kebutuhan: <span id="totalNeeds">-</span></p>
+        <p>Sisa Saldo: <span id="balance">-</span></p>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 MoneyMate</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
